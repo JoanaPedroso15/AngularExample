@@ -1,1 +1,6 @@
 <p>products works!</p>
+<button (click)='create()'> Create Product </button>
+<p *ngFor="let product of products$ | async ">{{product.id}} , {{product.discount}}, {{product.iva}}, {{product.pvp}}, {{product.shelfIds}} </p> <!--tenho que por o async porque estou a mandar o meu observable; se fosse o product ja nao precisaria-->
+
+<input [(ngModel)]="product.id" type="number" placeholder = "Insira Id do produto a apagar" /> 
+<button (click) = 'delete()'>Delete</button>
